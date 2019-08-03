@@ -191,41 +191,5 @@ extension UIImage {
         
         guard let newCGImage = context?.makeImage() else { return self }
         return UIImage.init(cgImage: newCGImage, scale: 1, orientation: .up)
-        
-        /*let ctx: CGContextRef = CGBitmapContextCreate(nil, Int(size.width), Int(size.height), CGImageGetBitsPerComponent(CGImage), 0, CGImageGetColorSpace(CGImage), CGImageAlphaInfo.PremultipliedLast.rawValue)!
-        
-        CGContextConcatCTM(ctx, transform)
-        
-        switch imageOrientation {
-        case UIImageOrientation.Left, UIImageOrientation.LeftMirrored, UIImageOrientation.Right, UIImageOrientation.RightMirrored:
-            CGContextDrawImage(ctx, CGRectMake(0, 0, size.height, size.width), CGImage)
-            break
-        default:
-            CGContextDrawImage(ctx, CGRectMake(0, 0, size.width, size.height), CGImage)
-            break
-        }
-        
-        let cgImage: CGImageRef = CGBitmapContextCreateImage(ctx)!
-        
-        return UIImage(CGImage: cgImage)
-        */
-        
-         //CGContextRef context = UIGraphicsGetCurrentContext();
-//        if (orient == UIImageOrientationRight || orient == UIImageOrientationLeft) {
-//            CGContextScaleCTM(context, -scaleRatio, scaleRatio);
-//            CGContextTranslateCTM(context, -height, 0);
-//        }
-//        else {
-//            CGContextScaleCTM(context, scaleRatio, -scaleRatio);
-//            CGContextTranslateCTM(context, 0, -height);
-//        }
-//
-//        CGContextConcatCTM(context, transform);
-        
-//        CGContextDrawImage(UIGraphicsGetCurrentContext(), CGRectMake(0, 0, width, height), imgRef);
-//        UIImage *imageCopy = UIGraphicsGetImageFromCurrentImageContext();
-//        UIGraphicsEndImageContext();
-//
-//        return imageCopy;
     }
 }
